@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ramo_atividade")
-public class RamoAtividades implements Serializable {
+public class RamoAtividade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,7 @@ public class RamoAtividades implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		RamoAtividades other = (RamoAtividades) obj;
+		RamoAtividade other = (RamoAtividade) obj;
 		return Objects.equals(id, other.id);
 	}
 
