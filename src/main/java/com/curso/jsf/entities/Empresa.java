@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+import com.curso.jsf.enums.TipoEmpresa;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,12 +34,15 @@ public class Empresa implements Serializable {
 	
 	private String cnpj;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date dataFundacao;
 	
 	@ManyToOne
 	@JoinColumn(name = "ramo_atividade_id")
 	private RamoAtividade ramoAtividade;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoEmpresa tipo;
 
 	public Long getId() {
 		return id;
